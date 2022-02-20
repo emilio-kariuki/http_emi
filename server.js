@@ -8,8 +8,8 @@ const port = 5000;
 
 app.post('/',async(req,res)=>{
     try{
-        const {first_name,second_name,age} = req.body;
-        const dbt = client.query("INSERT INTO emilio(first_name,second_name,age)VALUES($1,$2,$3)",[first_name,second_name,age]);
+        const {first_name,second_name} = req.body;
+        const dbt = client.query("INSERT INTO emilio(first_name,second_name)VALUES($1,$2)",[first_name,second_name]);
         res.json(dbt);
 
     }catch(err){
