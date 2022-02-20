@@ -3,6 +3,8 @@ const { json } = require('express/lib/response');
 const app = express();
 const client = require('./post')
 app.use(express.json({extended:false}));
+const hostname = "127.0.0.1";
+const port = 5000;
 
 app.post('/',async(req,res)=>{
     try{
@@ -15,4 +17,4 @@ app.post('/',async(req,res)=>{
     }
 })
 
-app.listen(5000,()=>{console.log("server started......")})
+app.listen(port,hostname,()=>{console.log("server started......")})
