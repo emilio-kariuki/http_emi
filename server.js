@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json({extended:false}));
 
-app.get('/',(req,res)=>{
+app.post('/',(req,res)=>{
     res.send("Emilio is the best in the world");
 })
 
