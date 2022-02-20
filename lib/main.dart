@@ -21,7 +21,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final first_name = TextEditingController();
   final second_name = TextEditingController();
-  final age = TextEditingController();
+  // final age = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
     body: jsonEncode({
           "first_name": "first_name.text",
           "second_name": "second_name.text",
-          // "age": int.parse("age.text")
+          
           
 })
     );
