@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -61,6 +65,7 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
               child: TextFormField(
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30.0),
@@ -77,10 +82,30 @@ class _HomeState extends State<Home> {
             ),
             Center(
                 child: ElevatedButton(
-              onPressed: () {},
+              onPressed: _makeGetRequest,
               child: Text("Press me"),
             )),
           ],
         ));
+  }
+  _makeGetRequest() async {
+    final url = Uri.parse(_localhost());
+    Response response = await post(url,
+    headers: {"content-type":"application/json"},
+    body: jsonEncode({
+          
+          "first_name": first_name.text,
+          "second_name": second_name.text,
+          "age": age.selection
+})
+    );
+    
+  }
+
+  String _localhost() {
+    if (Platform.isAndroid)
+      return 'http://10.0.2.2:5000/';
+    else // for iOS simulator
+      return 'http://localhost:5000/';
   }
 }
