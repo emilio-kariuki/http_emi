@@ -75,8 +75,8 @@ class _HomeState extends State<Home> {
     Response response = await post(url,
     headers: {"content-type":"application/json"},
     body: jsonEncode({
-          "first_name": "first_name.text",
-          "second_name": "second_name.text",
+          "first_name": first_name.text,
+          "second_name": second_name.text,
           
           
 })
