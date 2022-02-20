@@ -21,7 +21,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final first_name = TextEditingController();
   final second_name = TextEditingController();
-  final age = TextEditingController();
+  // final age = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,24 +62,7 @@ class _HomeState extends State<Home> {
                 controller: second_name,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-              child: TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    // icon: Icon(Icons.person,size:30,color: Colors.black),
-                    filled: true,
-                    hintStyle: TextStyle(color: Colors.grey[800]),
-                    focusColor: Colors.red,
-                    hintText: "age",
-                    prefixIcon: Icon(Icons.mail, color: Colors.blueGrey[900]),
-                    fillColor: Colors.grey[200]),
-                controller: age,
-              ),
-            ),
+            
             Center(
                 child: ElevatedButton(
               onPressed: _makeGetRequest,
@@ -95,7 +78,7 @@ class _HomeState extends State<Home> {
     body: jsonEncode({
           "first_name": first_name.text,
           "second_name": second_name.text,
-          "age": int.parse(age.text)
+          
 })
     );
     
