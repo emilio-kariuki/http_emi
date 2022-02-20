@@ -11,6 +11,6 @@ const client = new Client({
 client.on("end", ()=>{
     console.log("Connection ended")
 });
-client.on("on", ()=>{
+client.on("connect", ()=>{
     console.log("Connection ended")
 } );
