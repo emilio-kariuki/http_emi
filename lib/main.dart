@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
               child: TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -35,14 +35,14 @@ class _HomeState extends State<Home> {
                     filled: true,
                     hintStyle: TextStyle(color: Colors.grey[800]),
                     focusColor: Colors.red,
-                    hintText: "Email",
+                    hintText: "first name",
                     prefixIcon: Icon(Icons.mail, color: Colors.blueGrey[900]),
                     fillColor: Colors.grey[200]),
                 controller: first_name,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
               child: TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -52,14 +52,14 @@ class _HomeState extends State<Home> {
                     filled: true,
                     hintStyle: TextStyle(color: Colors.grey[800]),
                     focusColor: Colors.red,
-                    hintText: "Email",
+                    hintText: "second name",
                     prefixIcon: Icon(Icons.mail, color: Colors.blueGrey[900]),
                     fillColor: Colors.grey[200]),
                 controller: second_name,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
               child: TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
                     filled: true,
                     hintStyle: TextStyle(color: Colors.grey[800]),
                     focusColor: Colors.red,
-                    hintText: "Email",
+                    hintText: "age",
                     prefixIcon: Icon(Icons.mail, color: Colors.blueGrey[900]),
                     fillColor: Colors.grey[200]),
                 controller: age,
