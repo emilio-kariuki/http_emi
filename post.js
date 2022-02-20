@@ -1,4 +1,4 @@
-const {Client} = require('ps');
+const {Client} = require('pg');
 
 const client = new Client({
     host: "localhost",
@@ -7,10 +7,14 @@ const client = new Client({
     password: "postgres",
     database: "httpEmilio",
 });
-
-client.on("end", ()=>{
-    console.log("Connection ended")
-});
 client.on("connect", ()=>{
     console.log("Connection ended")
 } );
+client.on("end", ()=>{
+    console.log("Connection ended")
+});
+
+// client.listen(5000,()=>{console.log("server Started")});
+client.connect();
+
+module.exports = client;
